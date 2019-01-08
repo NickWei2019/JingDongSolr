@@ -21,7 +21,7 @@ public class SearchProductController {
 	@Autowired
 	private SearchProductImpl searchProductImpl ;
 	
-	/** test
+	/**
 	 * 对于搜索的处理，包括关键字，价格，类别，还有排序方式
 	 * @param productSearch
 	 * @return
