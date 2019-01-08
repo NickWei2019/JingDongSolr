@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 /**
- * è¿›è¡Œå•†å“æœç´¢å¤„ç†ï¼ˆé€šè¿‡solrï¼‰
+ * ½øĞĞÉÌÆ·ËÑË÷´¦Àí£¨Í¨¹ısolr£©
  * @author scw
  *2018-02-27
  */
@@ -21,17 +21,17 @@ public class SearchProductController {
 	@Autowired
 	private SearchProductImpl searchProductImpl ;
 	
-	/** wei
-	 * å¯¹äºæœç´¢çš„å¤„ç†ï¼ŒåŒ…æ‹¬å…³é”®å­—ï¼Œä»·æ ¼ï¼Œç±»åˆ«ï¼Œè¿˜æœ‰æ’åºæ–¹å¼
+	/** nick
+	 * ¶ÔÓÚËÑË÷µÄ´¦Àí£¬°üÀ¨¹Ø¼ü×Ö£¬¼Û¸ñ£¬Àà±ğ£¬»¹ÓĞÅÅĞò·½Ê½
 	 * @param productSearch
 	 * @return
 	 * @throws Exception 
 	 */
 	@RequestMapping(value="/list")
 	public String searchProduct(ProductSearch productSearch , Model model) throws Exception{
-		//è·å–åˆ°æ£€ç´¢çš„æ‰€æœ‰ç»“æœ
+		//»ñÈ¡µ½¼ìË÷µÄËùÓĞ½á¹û
 		List<ProductModel> searchProducts = searchProductImpl.searchProduct(productSearch);
-		//è®¾ç½®å›æ˜¾å†…å®¹
+		//ÉèÖÃ»ØÏÔÄÚÈİ
 		model.addAttribute("productModels", searchProducts);
 		model.addAttribute("queryString", productSearch.getQueryString());
 		model.addAttribute("catalog_name", productSearch.getCatalog_name());
